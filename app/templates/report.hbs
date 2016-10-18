@@ -1,0 +1,44 @@
+<h3>Your Report</h3>
+
+{{#if model.names}}
+  <h4>names</h4>
+  {{#each model.names as |name|}}
+    {{name.full}}
+  {{/each}}
+{{/if}}
+
+{{#if model.emails}}
+  <h4>emails</h4>
+  {{#each model.emails as |email|}}
+    {{email.email_address}}
+  {{/each}}
+{{/if}}
+
+{{#if model.educations}}
+  <h4>education</h4>
+  {{#each model.educations as |education|}}
+    {{education.school}}
+    {{education.degree}}
+    {{education.attended.end}}
+  {{/each}}
+{{/if}}
+
+{{#if model.jobs}}
+  <h4>jobs</h4>
+  {{#each model.jobs as |job|}}
+    {{job.company}}
+    {{job.title}}
+  {{/each}}
+{{/if}}
+
+{{#if model.social}}
+  <h4>social media</h4>
+  {{#each model.social as |source|}}
+    {{source.type}}
+    {{source.url}}
+  {{/each}}
+{{/if}}
+
+
+<button class="btn" {{action 'search'}}>Search Again</button>
+<button class="btn" {{action 'saveReport'}}>Save Report</button>
