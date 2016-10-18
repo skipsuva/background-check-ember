@@ -1,11 +1,28 @@
-<h3>Search</h3>
-<form {{action 'searchEmail' on='submit'}}>
-  {{input value=emailQuery placeholder='Enter an email to search' class='form-control'}}
-  <button type="submit" class="btn btn-default">Search</button>
-</form>
 
-{{#if errorMessage}}
-  <p>
-    {{errorMessage}}
-  </p>
-{{/if}}
+
+
+<div class="row">
+  <div class="col-sm-3" />
+  <div class="col-sm-6 text-center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Search for Information
+        </div>
+      </div>
+      <div class="panel-body text-center">
+        <form {{action 'searchEmail' on='submit'}}>
+          {{input value=emailQuery placeholder='Enter an email to search' class='form-control'}}
+          {{#if errorMessage}}
+          <p>
+            {{errorMessage}}
+          </p>
+          {{/if}}
+          <button type="submit" class="btn btn-success btn-sm btn-block">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3" />
+</div>
