@@ -1,6 +1,25 @@
-<h3>Your Report</h3>
+<div class="row">
+  <div class="col-sm-3" />
+  <div class="col-sm-6 text-center">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Your Report
+        </div>
+      </div>
+      <div class="panel-body text-center">
+        {{report-component model=model}}
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3" />
+</div>
 
-{{report-component model=model}}
-
-<button class="btn" {{action 'search'}}>Search Again</button>
-<button class="btn" {{action 'saveReport'}}>Save Report</button>
+<div class="row">
+  <div class="col-sm-3" />
+  <div class="col-sm-6 text-center">
+    <button class="btn btn-success btn-md " {{action 'search'}}>Search Again</button>
+    <button class="btn btn-primary btn-md " {{action 'saveReport'}}>Save Report</button>
+  </div>
+  <div class="col-sm-3" />
+</div>
