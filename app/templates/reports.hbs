@@ -1,5 +1,20 @@
 <h3>Your Saved Reports</h3>
 
 {{#each model as |report|}}
-  {{report-component model=report}}
+  <div class="row">
+    <div class="col-sm-3" />
+    <div class="col-sm-6 text-center">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="panel-title">
+            Report for: {{report.emails.[0].email_address}}
+          </div>
+        </div>
+        <div class="panel-body text-center">
+          {{report-component model=report}}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3" />
+  </div>
 {{/each}}
