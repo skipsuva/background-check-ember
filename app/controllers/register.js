@@ -4,16 +4,29 @@ export default Ember.Controller.extend({
   actions: {
     register(){
       let email = this.get('email');
-      let exisitingUsers = JSON.parse(localStorage.getItem('users'));
-
-      if(exisitingUsers){
-        exisitingUsers.push(email);
-        localStorage.setItem('users', JSON.stringify(exisitingUsers));
+      if(this.emailIsValid(email)){
+        this.registerUser(email);
       }else{
-        localStorage.setItem('users', JSON.stringify([email]));
+        this.set('errorMessage', "Please enter a valid email address.");
       }
-
-      this.transitionToRoute('login');
     }
+  },
+
+  emailIsValid(email){
+    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    return emailRegex.test(email);
+  },
+
+  registerUser(email){
+    let exisitingUsers = JSON.parse(localStorage.getItem('users'));
+
+    if(exisitingUsers){
+      exisitingUsers.push(email);
+      localStorage.setItem('users', JSON.stringify(exisitingUsers));
+    }else{
+      localStorage.setItem('users', JSON.stringify([email]));
+    }
+
+    this.transitionToRoute('login');
   }
 });

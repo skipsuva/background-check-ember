@@ -19,7 +19,7 @@ export default Ember.Controller.extend({
       }else{
         localStorage.setItem('reports', JSON.stringify([report]));
       }
-      this.transitionToRoute('search');
+      this.transitionToRoute('reports');
     }
   }
 });
