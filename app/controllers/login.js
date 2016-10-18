@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  // session: Ember.inject.service('session'),
 
   actions: {
     authenticate() {
@@ -10,6 +9,8 @@ export default Ember.Controller.extend({
 
       if(exisitingUsers.includes(email) && password === "BV-API-Challenge"){
         localStorage.setItem('currentUser', email);
+        this.controllerFor('application').set('model', email);
+
         this.transitionToRoute('search');
       }else{
         this.set('errorMessage', "You entered the wrong email or password.");

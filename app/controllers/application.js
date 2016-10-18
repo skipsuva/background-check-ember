@@ -6,7 +6,8 @@ export default Ember.Controller.extend({
   actions: {
     logout() {
       localStorage.removeItem('currentUser');
-      // template is not refreshed
+      this.set('model', null);
+
       this.transitionToRoute('login');
     }
   }
