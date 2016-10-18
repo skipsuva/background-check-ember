@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('register');
   this.route('search');
   this.route('report');
-  this.route('protected');
+  this.route('reports');
 });
 
 export default Router;
