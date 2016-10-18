@@ -1,14 +1,20 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
+  // session: Ember.inject.service('session'),
 
   actions: {
     authenticate() {
       let { email, password } = this.getProperties('email', 'password');
-      this.get('session').authenticate('authenticator:oauth2', email, password).catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
-      });
+      let exisitingUsers = JSON.parse(localStorage.getItem('users'));
+
+      if(exisitingUsers.includes(email) && password === "BV-API-Challenge"){
+        localStorage.setItem('currentUser', email);
+        this.transitionToRoute('search');
+      }else{
+        this.set('errorMessage', "You entered the wrong email or password.");
+      }
+
     }
   }
 

@@ -4,7 +4,7 @@
   Protected
 {{/link-to}}
 
-{{#if session.isAuthenticated}}
+{{#if model}}
   <button {{action 'logout'}}> Logout </button>
 {{else}}
   {{#link-to 'login'}}

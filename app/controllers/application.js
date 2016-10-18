@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  session: Ember.inject.service('session'),
+  // session: Ember.inject.service('session'),
 
   actions: {
     logout() {
-      this.get('session').invalidate();
+      localStorage.removeItem('currentUser');
+      // template is not refreshed
+      this.transitionToRoute('login');
     }
   }
-  
+
 });

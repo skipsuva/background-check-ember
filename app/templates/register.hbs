@@ -1,0 +1,8 @@
+<div id="login-form" class="leaflet-bar">
+  <h2>Create an account</h2>
+  <form {{action 'register' on='submit'}}>
+    <label for="email">Email</label>
+    {{input id='email' placeholder='Enter your Email' value=email type="email" class="form-control"}}
+    <button type="submit" class="btn">Register</button>
+  </form>
+</div>
