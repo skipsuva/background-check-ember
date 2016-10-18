@@ -20,13 +20,16 @@
   </div>
   <div class="col-sm-3" />
 </div>
-{{#if model.names.[0].full}}
-  <div class="row">
-    <div class="col-sm-3" />
-    <div class="col-sm-6 text-center">
-      <button class="btn btn-success btn-md " {{action 'search'}}>Search Again</button>
-      <button class="btn btn-primary btn-md " {{action 'saveReport'}}>Save Report</button>
+
+{{#if canSave}}
+  {{#if model.names.[0].full}}
+    <div class="row">
+      <div class="col-sm-3" />
+      <div class="col-sm-6 text-center">
+        <button class="btn btn-success btn-md " {{action 'search'}}>Search Again</button>
+        <button class="btn btn-primary btn-md " {{action 'saveReport'}}>Save Report</button>
+      </div>
+      <div class="col-sm-3" />
     </div>
-    <div class="col-sm-3" />
-  </div>
+  {{/if}}
 {{/if}}

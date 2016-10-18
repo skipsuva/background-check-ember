@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  // beforeModel: function() {
-  //   if (!localStorage.currentUser) {
-  //     this.transitionTo('login');
-  //   }
-  // },
+  beforeModel: function() {
+    if (!localStorage.currentUser) {
+      this.transitionTo('login');
+    }
+  },
 
   model: function(params) {
     let query = params.email;

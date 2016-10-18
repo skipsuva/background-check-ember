@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     searchEmail(){
       let query = this.get('emailQuery');
       if(this.queryIsValid(query)){
+        this.set('emailQuery', '');
         this.transitionToRoute('report', { queryParams: {email: query} });
       }else{
         this.set('errorMessage', "Please enter a valid email address.");
