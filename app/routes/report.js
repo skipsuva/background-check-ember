@@ -1,10 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel: function() {
+  beforeModel() {
     if (!localStorage.currentUser) {
       this.transitionTo('login');
     }
+  },
+
+  afterModel(){
+    this.controllerFor('search').set('isSearching', false);
   },
 
   model: function(params) {
