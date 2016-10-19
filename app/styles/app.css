@@ -7,6 +7,7 @@ body {
 
 #report-image {
   max-height: 140px;
+  min-height: 140px;
 }
 
 .social-li {

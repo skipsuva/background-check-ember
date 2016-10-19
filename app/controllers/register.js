@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
       let email = this.get('email');
       if(this.emailIsValid(email)){
         this.registerUser(email);
+        this.transitionToRoute('login');
       }else{
         this.set('errorMessage', "Please enter a valid email address.");
       }
@@ -26,7 +27,5 @@ export default Ember.Controller.extend({
     }else{
       localStorage.setItem('users', JSON.stringify([email]));
     }
-
-    this.transitionToRoute('login');
   }
 });

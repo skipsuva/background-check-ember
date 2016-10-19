@@ -11,7 +11,6 @@ export default Ember.Controller.extend({
         this.set('errorMessage', "Please enter a valid email address.");
       }
     }
-
   },
 
   queryIsValid(query){

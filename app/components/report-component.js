@@ -13,8 +13,5 @@ export default Ember.Component.extend({
     if(this.get('canShowImage')){
       return currentReport.images[0].url;
     }
-  }),
-
-  actions: {
-  }
+  })
 });

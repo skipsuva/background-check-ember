@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       localStorage.removeItem('currentUser');
       this.set('model', null);
 
-      this.transitionToRoute('login');
+      this.transitionToRoute('landing');
     }
   }
 

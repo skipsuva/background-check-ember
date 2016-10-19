@@ -11,13 +11,12 @@
         <form {{action 'searchEmail' on='submit'}}>
           {{input value=emailQuery placeholder='Enter an email to search' class='form-control lead'}}
           {{#if errorMessage}}
-          <p>
+          <p class="text-danger">
             {{errorMessage}}
           </p>
           {{/if}}
           <button type="submit" class="btn btn-success btn-block">Search</button>
         </form>
-
       </div>
     </div>
   </div>
