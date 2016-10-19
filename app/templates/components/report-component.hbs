@@ -1,3 +1,11 @@
+{{#if canShowImage}}
+  <div class="row">
+    <div class="col-sm-12">
+      <img src={{imageUrl}} id="report-image" class="center-block img-responsive img-circle">
+    </div>
+  </div>
+{{/if}}
+
 <div class="row">
   {{#if model.names}}
     <div class="col-sm-6">
@@ -62,11 +70,9 @@
       <h4><span class="label label-danger">Social Media Presence</span></h4>
       <ul class="list-group">
         {{#each model.social as |source|}}
-        {{#if source.type}}
-        <li class="list-group-item">
-          <a href={{source.url}}>{{source.type}}</a>
-        </li>
-        {{/if}}
+          {{#if source.type}}
+            <a href="{{source.url}}" class="list-group-item col-xs-6 social-li" target="_blank">{{source.type}}</a>
+          {{/if}}
         {{/each}}
       </ul>
     </div>

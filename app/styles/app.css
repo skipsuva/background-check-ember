@@ -1,0 +1,14 @@
+html {
+  background-color: #A9CAE8;
+}
+body {
+  background-color: #A9CAE8;
+}
+
+#report-image {
+  max-height: 140px;
+}
+
+.social-li {
+  border-radius: 4px;
+}
