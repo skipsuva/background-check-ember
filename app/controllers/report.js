@@ -5,12 +5,16 @@ export default Ember.Controller.extend({
   email: null,
   canSave: Ember.computed(function() {
     let currentReport = this.get('model');
-    let exisitingUserReports = JSON.parse(localStorage.getItem('reports')).filter(function(report) {
-      return report.reportOwner === localStorage.currentUser;
-    });
-    return exisitingUserReports.filter(function(r) {
-      return currentReport.emails[0].email_address === r.emails[0].email_address ;
-    }).length === 0;
+    if(localStorage.getItem('reports')){
+      let exisitingUserReports = JSON.parse(localStorage.getItem('reports')).filter(function(report) {
+        return report.reportOwner === localStorage.currentUser;
+      });
+      return exisitingUserReports.filter(function(r) {
+        return currentReport.emails[0].email_address === r.emails[0].email_address ;
+      }).length === 0;
+    }
+
+    return true;
   }),
 
   actions: {
