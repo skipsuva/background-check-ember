@@ -2,6 +2,8 @@
 
 This ember app allows you to search publicly accessible records connected to email addresses.  The app uses the browser's localStorage to store users, manage sessions and record reports.
 
+[Check it out here](https://ember-background-report.herokuapp.com).
+
 ## Getting Started
 
 Prerequisites: 
