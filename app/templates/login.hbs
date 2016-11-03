@@ -8,15 +8,15 @@
             <div class="form-group">
               <label for="email" class="col-md-4 control-label">E-Mail Address</label>
               <div class="col-md-6">
-                {{input value=email placeholder='Enter Email' class='form-control'}}
+                {{input id='login-email' value=email placeholder='Enter Email' class='form-control'}}
               </div>
             </div>
             <div class="form-group">
               <label for="password" class="col-md-4 control-label">Password</label>
               <div class="col-md-6">
-                  {{input value=password placeholder='Enter Password' class='form-control' type='password'}}
+                  {{input id='login-password' value=password placeholder='Enter Password' class='form-control' type='password'}}
                   {{#if errorMessage}}
-                    <span class="help-block">
+                    <span id="login-error" class="help-block">
                       {{errorMessage}}
                     </span>
                   {{/if}}

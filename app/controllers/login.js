@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       let { email, password } = this.getProperties('email', 'password');
       let exisitingUsers = JSON.parse(localStorage.getItem('users'));
 
-      if(exisitingUsers.includes(email) && password === "BV-API-Challenge"){
+      if(exisitingUsers && exisitingUsers.includes(email) && password === "BV-API-Challenge"){
         this.setCurrentUser(email);
         this.transitionToRoute('search');
       }else{
