@@ -14,9 +14,9 @@
         </div>
         <div class="panel-body text-center">
           <form {{action 'searchEmail' on='submit'}}>
-            {{input value=emailQuery placeholder='Enter an email to search' class='form-control lead'}}
+            {{input id="search-input" value=emailQuery placeholder='Enter an email to search' class='form-control lead'}}
             {{#if errorMessage}}
-              <p class="text-danger">
+              <p id="search-error" class="text-danger">
                 {{errorMessage}}
               </p>
             {{/if}}
